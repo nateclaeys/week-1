@@ -54,5 +54,7 @@ function countChar(x, y){
     }
     return numLetters;
 }
+console.log(countBs("BBC"));
+console.log(countChar("kakkerlak", "k"));
 
 
