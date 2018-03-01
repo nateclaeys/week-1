@@ -57,4 +57,24 @@ function countChar(x, y){
 console.log(countBs("BBC"));
 console.log(countChar("kakkerlak", "k"));
 
-
+function range(start, end, step){
+    let rnge = [];
+    if (step<0 && start>end){
+        for (start; end <= start; start += step)
+        rnge.push(start);
+    }
+    else if (step>0 && start<end){
+        for (start; start <= end; start += step){
+        rnge.push(start);
+        }
+    }
+    else for (start; start <= end; start++){rnge.push(start);}
+    return rnge;
+  }
+function sum(x){
+    let sum = 0;
+    for (let i = 0; i > x.length; i++){
+        sum += x[i];
+    }
+    return sum;
+}
