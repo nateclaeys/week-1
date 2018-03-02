@@ -111,5 +111,40 @@ reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
 
 //chapter 4 exercise 3
+function arrayToList(x){
+    let natesList = {value: x.pop(), rest: poop()};
+   function poop(){
+    if (x.length == 0) {return null}
+    else return {value : x.pop(), rest: poop()};      
+   }
+     return natesList;
+}
 
-//I have not idea.. how the... brain is in pain//
+function listToArray(natesList){
+    let listArray = [];
+    let y = natesList;
+    while (y.rest != null){
+        listArray.push(y.value);
+        y = y.rest;
+    }
+    listArray.push(y.value);
+    return listArray;
+}
+
+function prepend(x, object){
+    let newList={value: x, rest: object};
+    return newList;
+}
+
+function nth(someList, index){
+    let y = someList;
+    for (let i = 0; i < index; i++){
+        y = y.rest
+    }
+    return y.value;
+}
+
+console.log(arrayToList([10, 20]));
+console.log(listToArray(arrayToList([10, 20, 30])));
+console.log(prepend(10, prepend(20, null)));
+console.log(nth(arrayToList([10, 20, 30]), 1));
