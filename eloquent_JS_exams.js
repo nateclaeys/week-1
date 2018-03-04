@@ -148,3 +148,73 @@ console.log(arrayToList([10, 20]));
 console.log(listToArray(arrayToList([10, 20, 30])));
 console.log(prepend(10, prepend(20, null)));
 console.log(nth(arrayToList([10, 20, 30]), 1));
+
+// chapter 4 exercise 4 too hard
+
+function deepEqualy(x, y){
+    let boolNate = false;
+    if (x === y) boolNate = true;
+    else if (typeof(x) == typeof(y)){
+        for( let i = 0; i < x.keys.length; i++){
+            if (x.keys[i] !== y.keys[i]) boolNate = false;
+        }
+        
+    }
+    return boolNate;
+}
+
+let obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+
+console.log(deepEqual(obj, {here: 1, object: 2}));
+
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+
+// chapter 5 exercise 1
+
+
+const reducer = (accumulator, currentValue) => accumulator.concat(currentValue);
+let arrays = [[1, 2, 3], [4, 5], [6]];
+console.log(arrays.reduce(reducer));
+
+// Chapter 5 exercise 2
+
+function loop(iterations, testF, updateF, bodyF){
+    let numIter = iterations;
+     while (testF(numIter)) {
+        bodyF(numIter);
+        numIter = updateF(numIter);
+     
+    }
+
+
+}
+
+loop(3, n => n > 0, n => n - 1, console.log);
+// → 3
+// → 2
+// → 1
+
+//chapter 5 exercise 3
+
+
+function every(array, test) {
+    let nate = true;
+    array.forEach(element => { 
+        if (test(element) !== true){
+            nate = false; 
+        }
+    });
+    return nate;
+  }
+  
+  // cant figure out the some part, done trying. seems gay
+
+  console.log(every([1, 3, 5], n => n < 10));
+  // → true
+  console.log(every([2, 4, 16], n => n < 10));
+  // → false
+  console.log(every([], n => n < 10));
+  // → true
+
+  // chapter 5 exercise 4 is stupid.
